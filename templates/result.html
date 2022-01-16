@@ -1,0 +1,110 @@
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing URL Detection</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: poppins;
+      }
+      body {
+        background-color: #f2f4ff;
+      }
+      .container {
+        width: 400px;
+        height: 200px;
+        background-color: #fff;
+        margin: 150px auto;
+        border-radius: 11px;
+        padding: 40px 50px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
+      /* top-header */
+      .top-header h3 {
+        text-align: center;
+        color: #495d76;
+      }
+      .top-header p {
+        color: #cecfd3;
+        font-size: 13px;
+        text-align: center;
+        margin-top: 5px;
+      }
+      /* top-header */
+ 
+      /* button */
+      .btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+      }
+      .btn-2 {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+      }
+      .btn button {
+        width: 100%;
+        border: none;
+        height: 35px;
+        background-color: #14b53a;
+        color: #fff;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .btn-2 button {
+        width: 100%;
+        border: none;
+        height: 35px;
+        background-color: #d12c4d;
+        color: #fff;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      /* button */
+      p.last {
+        text-align: center;
+        position: relative;
+        bottom: 120px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-header">
+        <h2 align=center>Result</h2>
+      </div>
+      {% if result == '1' %}
+      <div class="btn">
+        <button type="submit">This Site is safe</button>
+      </div>
+      {% else %}
+      <div class="btn-2">
+        <button type="submit">This Site is not safe</button>
+      </div>
+      {% endif %}
+    </div>
+    <p class="last">
+      <a href="/" style="color: #277ffd">Back to Home</a></p>
+  </body>
+</html>
+{% endblock content %}
